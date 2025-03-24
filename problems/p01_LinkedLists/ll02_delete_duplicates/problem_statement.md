@@ -1,6 +1,6 @@
 ## 02: Eliminar Duplicados de una Lista Enlazada Ordenada
 
-Dada la cabeza de una lista enlazada ordenada (`list`), elimina todos los nodos duplicados para que cada número aparezca solo una vez. Devuelve la lista enlazada modificada.
+Dada una lista enlazada ordenada (`list`), elimina todos los nodos duplicados para que cada número aparezca solo una vez. Devuelve la lista enlazada modificada.
 
 **Ejemplos**
 
