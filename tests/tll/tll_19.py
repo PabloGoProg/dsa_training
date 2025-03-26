@@ -33,5 +33,5 @@ from problems import merge_k_ordered_lists
 
 def test_merge_k_ordered_lists(lists, expected):
   lists = [SingleLinkedList(l) for l in lists]
-  result = merge_k_ordered_lists(lists)
+  result = merge_k_ordered_lists(lists, len(lists))
   assert str(result) == str(expected)
