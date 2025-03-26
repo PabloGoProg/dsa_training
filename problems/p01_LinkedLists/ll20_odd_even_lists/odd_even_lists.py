@@ -7,7 +7,7 @@
 
 from data_structures import SingleLinkedList
 
-def odd_even_lists(list: SingleLinkedList, k: int) -> SingleLinkedList:
+def odd_even_lists(list: SingleLinkedList) -> SingleLinkedList:
   '''
     Realiza tu implementación en esta función
   '''
