@@ -1,16 +1,8 @@
-class Node:
-  
-  def __init__(self, value):
-    self.value = value
-    self.next = None
-    self.prev = None
-    
-  def __repr__(self):
-    return f"Node({self.value})"
-  
-class DoublyLinkedList:
+from .nodes import Node
+
+class SingleLinkedList:
   '''
-    Doubly Linked List class
+    Single Linked List class
     
     Attributes:
       head: Node
@@ -24,12 +16,23 @@ class DoublyLinkedList:
     
     if initial_values:
       self.from_list(initial_values)
-      
+    
   # ------------------------------
   # Puedes desarrollar la lógica de los métodos de la lista enlazada aquí
   
+  def append(self, value):
+    '''
+      Esto es solo un ejemplo de como se deben implementar los métodos de la lista enlazada
+      Puedes modificarlo o eliminarlo si lo deseas
+    '''
+    new_node = Node(value)
+    if not self.head:
+      self.head = new_node
+    else:
+      self.tail.next = new_node
+    self.tail = new_node
   
-  # ------------------------------
+  # ------------------------------  
   
   def create_node(self, value):
     '''
@@ -49,41 +52,45 @@ class DoublyLinkedList:
       new_node = self.create_node(value)
       if not self.head:
         self.head = new_node
+        self.tail = new_node
       else:
-        new_node.prev = self.tail
         self.tail.next = new_node
-      self.tail = new_node
-      
+        self.tail = new_node
+    
   def __sizeof__(self):
     '''
       IMPORTANTE: NO MODIFICAR ESTE MÉTODO
     
       Devuelve el tamaño de la lista enlazada
+      Funciona con la función len()
     '''
     len = 0
     current = self.head
     while current:
       len += 1
       current = current.next
-    return len
+    return len    
   
   def __repr__(self):
     '''
       IMPORTANTE: NO MODIFICAR ESTE MÉTODO
     
-      Devuelve una representación en cadena de la lista enlazada
+      Devuelve una representación de la lista enlazada en forma de string
+      Funciona con la función print()
     '''
-    values = []
+    nodes = []
     current = self.head
     while current:
-      values.append(current.value)
+      nodes.append(str(current))
       current = current.next
-    return str(values)
+    return f'[{", ".join(nodes)}]'
   
   def __str__(self):
     '''
       IMPORTANTE: NO MODIFICAR ESTE MÉTODO
     
-      Devuelve una representación en cadena de la lista enlazada
+      Devuelve una representación de la lista enlazada en forma de string
+      Funciona con la función str()
     '''
     return self.__repr__()
+  
